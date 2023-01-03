@@ -1,0 +1,54 @@
+<!-- <p>{{Date | date:'dd-MM-yyyy hh:mm:ss a':'+0530'}}</p> -->
+<div class="d-flex flex-row">
+  <div>
+    <p class="bg-danger text-white p-1 ">Breaking News</p>
+  </div>
+  <div>
+    <marquee behavior="" direction="" style="background-color: rgba(88, 82, 82, 0.13);">
+      <h6>Frank Lampard Pleased with Character and Fight of
+        Everton After Manchester City Draw</h6>
+
+    </marquee>
+  </div>
+</div>
+
+
+<div class="m-3">
+  <div class="container-fluid mr-2">
+    <div class="row">
+      <div class="col-md-8 shadow">
+        <app-news-card [imgPosition]="'left'" [newsList]="news"></app-news-card>
+      </div>
+      <div class="col-md-4 ">
+        <app-news-card [imgPosition]="'breakingNews'" [newsList]="news"></app-news-card>
+      </div>
+    </div>
+  </div>
+  <!-- <a [routerLink]="['news']" [state]="{ id:1 , role:'super_admin'}">
+    Dashboard
+  </a> -->
+
+  <div class="container-fluid"
+    style="margin-top: 100px;margin-bottom: 100px;background-color: rgba(88, 86, 86, 0.342);">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="https://jharkhandstatenews.com/assets/admin/uploads/gvine_img/595656_1672490369.jpg" alt=""
+          class="img-fluid">
+      </div>
+      <div class="col-md-8">
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <!-- section 2 -->
+  <div class="container-fluid mr-2">
+    <div class="row">
+      <div class="col-md-8 shadow">
+        <app-news-card [imgPosition]="'right'" [sportList]="sport"></app-news-card>
+      </div>
+      <div class="col-md-4 ">
+        <app-news-card [imgPosition]="'breakingNews'" [newsList]="sport"></app-news-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+img:hover {
+  transform: scale(1.1);
+}
+
+.zoom{
+    transform: scale(1.1);
+
+}
+.font{
+    font-size: 12px;
+    margin: 0px;
+}

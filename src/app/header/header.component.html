@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <img src="https://jharkhandstatenews.com/assets/img/logo.png" style="background-color: white;" width="30%"
+      class="img-fluid" alt="">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a [ngClass]="{'active':a==b}" class="nav-item nav-link" href="" routerLink="home">Home{{currentRoute}}</a>
+        <a class="nav-item nav-link" href="" routerLink="contact" routerLinkActive="active-link">News</a>
+        <a class="nav-item nav-link" href="" routerLink="contact">About</a>
+        <a class="nav-item nav-link" href="" routerLink="contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</nav>

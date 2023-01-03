@@ -1,0 +1,29 @@
+<div class="p-2">
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="d-flex flex-row">
+            <div>
+              <span></span> <input type="text" placeholder="Search News" class="p-2 "
+                style="border-radius: 0%; border: none;" [(ngModel)]="search">
+            </div>
+            <div>
+              <button class="btn bg-dark border" (click)="SearchHandler()">Search</button>
+            </div>
+          </div>
+        </div>
+        <div class=" col-md-6">
+          <span *ngIf="searchNews!=''" class="bg-gray p-3">{{searchNews}} <button (click)="searchCoseHandler()"
+              type="button" style="background: none;" class="close bg-gray" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button></span>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <app-news-card [imgPosition]="'breakingNews'" [newsList]="news"></app-news-card>
+</div>

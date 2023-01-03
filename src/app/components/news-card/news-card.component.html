@@ -1,0 +1,134 @@
+<div>
+  <!-- left image  -->
+  <div class="container" *ngIf="imgPosition=='left'">
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor="let i of newsList | slice:0:1" style="height: 40vh; background-color: blueviolet;">
+          <div class="card  text-white mt-2 mb-2">
+            <img class="card-img" src="{{i.image}}" alt="Card image">
+            <div class="card-img-overlay " style="background-color: rgba(43, 39, 39, 0.575);">
+              <h5 class="card-title">{{i.title}}</h5>
+              <p class="card-text">{{i.content}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-2">
+        <div *ngFor="let i of newsList | slice:1:5" class="p-2 pb-0">
+          <a routerLink="/news/{{i}}">
+            <div *ngIf="null != null ;then content else other_content">here is ignored</div>
+            <ng-template #other_content>
+              <div class="row">
+                <div class="col-md-3">
+                  <img class="img-fluid" src="{{i.image}}" alt="news image">
+                </div>
+                <div class="col-md-9">
+                  <div class="">
+                    <h6 class="pl-2">{{i.title}}</h6>
+                    <p class="text-muted pl-2" style="margin: 0px;">{{i.publishedAt}}</p>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template #content>
+              <div class="d-flex flex-row mb-3">
+                <div class="mr-2">
+                  <img class="img-fluid" width="280px"
+                    src="https://ichef.bbci.co.uk/news/1024/branded_news/0E83/production/_115651730_breaking-promo-976.png"
+                    alt="news image">
+                </div>
+                <div class="" style="padding-left: 21px;">
+                  <h6 class="pl-2">{{i.title}}</h6>
+                  <p class="text-muted pl-2">{{i.pubDate}}</p>
+                </div>
+              </div>
+            </ng-template>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- right image -->
+  <div class="container" *ngIf="imgPosition=='right'">
+    <div class="row">
+      <div class="col-md-6 mt-2">
+        <div *ngFor="let i of sportList | slice:1:5" class="p-2 pb-0">
+          <div *ngIf="null != null ;then content else other_content">here is ignored</div>
+          <ng-template #other_content>
+            <div class="row">
+              <div class="col-md-3">
+                <img class="img-fluid" src="{{i.image}}" alt="news image">
+              </div>
+              <div class="col-md-9">
+                <div class="">
+                  <h6 class="pl-2">{{i.title}}</h6>
+                  <p class="text-muted pl-2" style="margin: 0px;">{{i.publishedAt}}</p>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #content>
+            <div class="d-flex flex-row mb-3">
+              <div class="mr-2">
+                <img class="img-fluid" width="280px"
+                  src="https://ichef.bbci.co.uk/news/1024/branded_news/0E83/production/_115651730_breaking-promo-976.png"
+                  alt="news image">
+              </div>
+              <div class="" style="padding-left: 21px;">
+                <h6 class="pl-2">{{i.title}}</h6>
+                <p class="text-muted pl-2">{{i.pubDate}}</p>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div *ngFor="let i of sportList | slice:0:0" class="p-2 ">
+          <div *ngIf="i.image_url == null ;then content else other_content">here is ignored</div>
+          <ng-template #other_content>
+            <img src="{{i.image_url}}" alt="News Image
+              " class="img-fluid mt-3">
+            <p>{{i.description}}</p>
+          </ng-template>
+          <ng-template #content>
+            <img src="https://ichef.bbci.co.uk/news/1024/branded_news/0E83/production/_115651730_breaking-promo-976.png"
+              alt="News Image
+              " class="img-fluid mt-3">
+            <p>{{i.description}}</p>
+          </ng-template>
+        </div>
+
+        <div *ngFor="let i of sportList | slice:0:1">
+          <div class="card  text-white mt-2 mb-2">
+            <img class="card-img" src="{{i.image}}" alt="Card image">
+            <div class="card-img-overlay " style="background-color: rgba(43, 39, 39, 0.575);">
+              <h5 class="card-title">{{i.title}}</h5>
+              <p class="card-text">{{i.content}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- breaking news  -->
+  <div class="container shadow" *ngIf="imgPosition=='breakingNews'">
+    <div class="row m-2 border-bottom" *ngFor="let i of newsList |slice :0:8" style="margin-bottom: 5px;">
+      <!--    <a [routerLink]="['/news','{{i.image}}','{{i.title}}','{{i.description}}','{{i.content}}']">-->
+      <a routerLink="/news/title" class="btn btn-primary">
+        <div class="col-md-3" style="padding: 5px;">
+          <img class="img-fluid" src="{{i.image}}" alt="news image">
+        </div>
+        <div class="col-md-9">
+          <div class="">
+            <p class="pl-2 font">{{i.title}}</p>
+            <!-- <p class="text-muted pl-2" style="margin: 0px;">{{i.publishedAt}}</p> -->
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
